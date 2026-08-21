@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Gerard Braad</title>
+        <meta name="description" content="Gerard Braad - Resume">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=optional" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+        <link href="//cdn.gbraad.nl/css/shared-theme.css" rel="stylesheet">
+
+        <style>
+            body {
+                display: flex;
+                flex-direction: column;
+                min-height: 100vh;
+            }
+
+            .content-wrapper {
+                flex: 1;
+            }
+
+            /* Resume content styling */
+            .resume-content {
+                max-width: 900px;
+                margin: 0 auto;
+                padding: 40px 20px;
+                background: var(--bg-secondary);
+                border: 1px solid var(--border);
+                overflow: auto;
+            }
+
+            .resume-content h1 {
+                font-size: 2em;
+                color: var(--accent-orange);
+                text-align: center;
+                margin-bottom: 5px;
+                letter-spacing: 3px;
+            }
+
+            .resume-content h2 {
+                font-size: 1.1em;
+                color: var(--accent-blue);
+                border-bottom: 1px solid var(--border);
+                padding-bottom: 5px;
+                margin-top: 30px;
+                letter-spacing: 2px;
+            }
+
+            .resume-content h3 {
+                font-size: 0.8em;
+                color: var(--text-tertiary);
+                text-transform: uppercase;
+                letter-spacing: 2px;
+                margin-top: 20px;
+                margin-bottom: 8px;
+                padding-left: 15px;
+                border-left: 2px solid var(--border);
+            }
+
+            .resume-content p {
+                color: var(--text-secondary);
+                line-height: 1.7;
+            }
+
+            .resume-content ul {
+                padding-left: 20px;
+                margin-bottom: 15px;
+                list-style: none;
+            }
+
+            .resume-content ul li {
+                color: var(--text-secondary);
+                margin-bottom: 5px;
+                line-height: 1.6;
+            }
+
+            .resume-content a {
+                color: var(--accent-blue);
+            }
+
+            .resume-content a:hover {
+                color: var(--accent-orange);
+            }
+
+            .resume-content blockquote {
+                border-left: 3px solid var(--accent-blue);
+                margin: 15px 0;
+                padding: 10px 20px;
+                color: var(--text-secondary);
+                font-style: italic;
+                background: var(--bg-tertiary);
+            }
+
+            .resume-content blockquote p {
+                margin: 0;
+            }
+
+            .resume-content dl {
+                margin: 20px 0;
+            }
+
+            .resume-content dt {
+                font-weight: bold;
+                color: var(--accent-orange);
+                text-transform: uppercase;
+                letter-spacing: 1px;
+                font-size: 0.9em;
+                margin-top: 15px;
+            }
+
+            .resume-content dd {
+                margin: 5px 0 10px 0;
+                padding-left: 0;
+            }
+
+            .resume-content table {
+                width: 100%;
+                border-collapse: collapse;
+                margin: 15px 0;
+            }
+
+            .resume-content table td,
+            .resume-content table th {
+                padding: 8px 12px;
+                border: 1px solid var(--border);
+                color: var(--text-secondary);
+            }
+
+            .resume-content img {
+                max-width: 100%;
+                height: auto;
+                display: block;
+            }
+
+            .resume-content figure {
+                width: 140px;
+                float: right;
+                margin: 5px 0 10px 20px;
+                padding: 6px;
+                border: 1px solid var(--border);
+                background: var(--bg-tertiary);
+                overflow: hidden;
+            }
+
+            .resume-content figcaption {
+                display: none;
+            }
+
+            .resume-content::after {
+                content: '';
+                display: table;
+                clear: both;
+            }
+
+            @media print {
+                .top-banner,
+                footer {
+                    display: none !important;
+                }
+
+                .resume-content {
+                    border: none;
+                    padding: 0;
+                    max-width: 100%;
+                }
+
+                body {
+                    background: white;
+                    color: black;
+                }
+            }
+        
+        /* Callouts - GitHub/Obsidian/mdbook-callouts compatible */
+        :root {
+          --color-blue-rgb:   9, 105, 218;
+          --color-cyan-rgb:   26, 127, 55;
+          --color-purple-rgb: 130, 80, 223;
+          --color-orange-rgb: 154, 103, 0;
+          --color-red-rgb:    209, 36, 47;
+        }
+        .mdbook-callouts {
+          padding: 8px 16px;
+          margin-bottom: 16px;
+          border-radius: 4px;
+          background: var(--mdbook-callouts-background);
+        }
+        .mdbook-callouts > *:first-child { margin-top: 0; }
+        .mdbook-callouts > *:last-child  { margin-bottom: 0; }
+        .mdbook-callouts-title {
+          display: flex;
+          font-weight: 600;
+          align-items: center;
+          line-height: 1;
+          margin-bottom: 0.5em;
+          color: var(--mdbook-callouts-color);
+        }
+        .mdbook-callouts-icon {
+          display: inline-block;
+          width: 1em;
+          height: 1em;
+          margin-right: 0.4em;
+          background-color: currentColor;
+          -webkit-mask: no-repeat center / 100%;
+          mask: no-repeat center / 100%;
+          -webkit-mask-image: var(--mdbook-callouts-icon);
+          mask-image: var(--mdbook-callouts-icon);
+        }
+        .mdbook-callouts-note {
+          --mdbook-callouts-color: rgb(var(--color-blue-rgb));
+          --mdbook-callouts-background: rgba(var(--color-blue-rgb), 0.1);
+          --mdbook-callouts-icon: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9ImN1cnJlbnRDb2xvciIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiPjxwYXRoIGQ9Ik0xNyAzYTIuODUgMi44MyAwIDEgMSA0IDRMNC41IDIwLjUgMiAyMmwxLjUtNS41WiIvPjxwYXRoIGQ9Im0xNSA1IDQgNCIvPjwvc3ZnPg==');
+        }
+        .mdbook-callouts-tip {
+          --mdbook-callouts-color: rgb(var(--color-cyan-rgb));
+          --mdbook-callouts-background: rgba(var(--color-cyan-rgb), 0.1);
+          --mdbook-callouts-icon: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9ImN1cnJlbnRDb2xvciIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiPjxwYXRoIGQ9Ik04LjUgMTQuNUEyLjUgMi41IDAgMCAwIDExIDEyYzAtMS4zOC0uNS0yLTEtMy0xLjA3Mi0yLjE0My0uMjI0LTQuMDU0IDItNiAuNSAyLjUgMiA0LjkgNCA2LjUgMiAxLjYgMyAzLjUgMyA1LjVhNyA3IDAgMSAxLTE0IDBjMC0xLjE1My40MzMtMi4yOTQgMS0zYTIuNSAyLjUgMCAwIDAgMi41IDIuNXoiLz48L3N2Zz4=');
+        }
+        .mdbook-callouts-important {
+          --mdbook-callouts-color: rgb(var(--color-purple-rgb));
+          --mdbook-callouts-background: rgba(var(--color-purple-rgb), 0.1);
+          --mdbook-callouts-icon: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9ImN1cnJlbnRDb2xvciIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiPjxjaXJjbGUgY3g9IjEyIiBjeT0iMTIiIHI9IjEwIi8+PGxpbmUgeDE9IjEyIiB4Mj0iMTIiIHkxPSI4IiB5Mj0iMTIiLz48bGluZSB4MT0iMTIiIHgyPSIxMi4wMSIgeTE9IjE2IiB5Mj0iMTYiLz48L3N2Zz4=');
+        }
+        .mdbook-callouts-warning {
+          --mdbook-callouts-color: rgb(var(--color-orange-rgb));
+          --mdbook-callouts-background: rgba(var(--color-orange-rgb), 0.1);
+          --mdbook-callouts-icon: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9ImN1cnJlbnRDb2xvciIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiPjxwYXRoIGQ9Im0yMS43MyAxOC04LTE0YTIgMiAwIDAgMC0zLjQ4IDBsLTggMTRBMiAyIDAgMCAwIDQgMjFoMTZhMiAyIDAgMCAwIDEuNzMtM1oiLz48cGF0aCBkPSJNMTIgOXY0Ii8+PHBhdGggZD0iTTEyIDE3aC4wMSIvPjwvc3ZnPg==');
+        }
+        .mdbook-callouts-caution {
+          --mdbook-callouts-color: rgb(var(--color-red-rgb));
+          --mdbook-callouts-background: rgba(var(--color-red-rgb), 0.1);
+          --mdbook-callouts-icon: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9ImN1cnJlbnRDb2xvciIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiPjxwYXRoIGQ9Ik0xMiAyMnM4LTQgOC0xMFY1bC04LTMtOCAzdjdjMCA2IDggMTAgOCAxMCIvPjxwYXRoIGQ9Ik0xMiA4djQiLz48cGF0aCBkPSJNMTIgMTZoLjAxIi8+PC9zdmc+');
+        }
+</style>
+    </head>
+    <body>
+
+        <div class="top-banner">
+            <div class="banner-left">
+                <a href="https://gbraad.nl" class="back-button" title="gbraad.nl">&#8592;</a>
+                <div class="banner-title">
+                    <img src="//cdn.gbraad.nl/images/logo.svg" alt="Gerard Braad" class="banner-logo">
+                    Gerard Braad
+                </div>
+            </div>
+            <nav class="banner-nav">
+                <a href="https://gbraad.nl">Home</a>
+                <a href="https://blog.gbraad.nl">Blog</a>
+                <a href="index.html">Résumé</a>
+            </nav>
+        </div>
+
+        <div class="content-wrapper">
+            <div class="container">
+                <div class="resume-content">
+<section id="gerard-braad" class="level1">
+<h1><em><strong>Gerard Braad</strong></em></h1>
+<section id="available-versions" class="level2">
+<h2>Available versions</h2>
+<ul>
+<li><strong>Resume</strong><br />
+<a href="resume.html">HTML</a>, <a href="resume.pdf">Printable
+PDF</a></li>
+<li><strong>Recommendations are given on my LinkedIn
+profile</strong><br />
+<a
+href="https://linkedin.com/in/gbraad">https://linkedin.com/in/gbraad</a></li>
+<li><strong>Source and GitHub organization</strong><br />
+<a
+href="https://github.com/gbraad-resume">https://github.com/gbraad-resume/</a></li>
+<li><strong>Portfolio</strong><br />
+My portfolio can be found on my <a
+href="http://gbraad.nl/#portfolio">homepage</a></li>
+</ul>
+<div class="mdbook-callouts mdbook-callouts-important">
+<p class="mdbook-callouts-title"><span class="mdbook-callouts-icon"></span> Important</p>
+<p>For mobility purposes: European Passport and China Permanent Resident
+(Green Card). No visa/work permit sponsorship required. Fully equipped
+for cross-border remote work via EOR platforms (e.g., Remote.com).</p>
+</div>
+<div class="mdbook-callouts mdbook-callouts-caution">
+<p class="mdbook-callouts-title"><span class="mdbook-callouts-icon"></span> Caution</p>
+<p>Not for distribution. Third-party representation or job submission is
+strictly prohibited without prior written authorization.</p>
+</div>
+<div class="mdbook-callouts mdbook-callouts-note">
+<p class="mdbook-callouts-title"><span class="mdbook-callouts-icon"></span> Note</p>
+<p>The GitHub organization contains the source files and an automated
+process to publish both the webpage and PDF files. This gives an insight
+in how I think about automation.</p>
+</div>
+<table>
+<colgroup>
+<col style="width: 100%" />
+</colgroup>
+<thead>
+<tr>
+<th><a href="http://gbraad.nl"
+title="Gerard Braad &lt;me@gbraad.nl&gt;"><img
+src="http://gravatar.com/avatar/e466994eea3c2a1672564e45aca844d0.png?s=60"
+alt="“Gerard Braad”" /></a></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://gbraad.nl/social">@gbraad</a></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <div class="footer-content">
+                <ul class="social-links">
+                    <li><a href="https://github.com/gbraad/" title="GitHub"><i class="fab fa-github"></i></a></li>
+                    <li><a href="https://gitlab.com/gbraad" title="GitLab"><i class="fab fa-gitlab"></i></a></li>
+                    <li><a href="https://mastodon.social/@gbraad" title="Mastodon"><i class="fab fa-mastodon"></i></a></li>
+                    <li><a href="https://linkedin.com/in/gbraad" title="LinkedIn"><i class="fab fa-linkedin"></i></a></li>
+                </ul>
+                <p class="copyright">&copy; Gerard Braad</p>
+            </div>
+        </footer>
+
+        <script>
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+            ga('create', 'UA-34531495-4', 'auto');
+            ga('send', 'pageview');
+        </script>
+    </body>
+</html>
